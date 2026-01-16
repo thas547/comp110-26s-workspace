@@ -9,7 +9,7 @@ Your work in the course will be completed in this workspace. Instructions for th
 1. Select the _View_ menu and then _Source Control_
    - Alternatively: Select the Activity Bar icon that's three circles with lines connected for Source Control
 2. Notice the files listed under "Changes". These are files you've made modifications to since your last backup.
-3. Move your mouse's cursor over the word **Changes** and notice the + symbol that appears. Click that plus symbol to add all changes to the next backup. You will now see these listed under "Staged Changes".
+3. Move your mouse's cursor over the word **Changes** and notermtice the + symbol that appears. Click that plus symbol to add all changes to the next backup. You will now see these listed under "Staged Changes".
    - If you do not want to backup _all_ changed files, you can select them individually. For this course you're encouraged to back everything up.
 4. In the Message box, give a brief description of what you've changed and are backing up. This will help you find a specific backup (called a "commit") if needed.
 5. Open the _View_ menu and select _Command Palette_, the shortcut for this menu is:
