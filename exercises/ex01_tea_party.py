@@ -3,15 +3,20 @@
 __author__: str = "730733868"
 
 
-def main_planner(guests: int):
+def main_planner(guests: int) -> None:
     """Use the other functions and their parameters to make a tea party planner"""
     # I was a little confused how to stop getting errors when I just had tea_bags(guest)
     # adding str corrected it thougj
     # I went back to the functions a few times to figure out how to print it right
     print("A Cozy Tea Party for " + str(guests) + " People!")
-    print("Tea Bags: " + str(tea_bags(guests)))
-    print("Treats: " + str(treats(guests)))
-    print("Cost: $" + str(cost(tea_count=tea_bags(guests), treat_count=treats(guests))))
+    print("Tea Bags: " + str(tea_bags(people=guests)))
+    print("Treats: " + str(treats(people=guests)))
+    print(
+        "Cost: $"
+        + str(
+            cost(tea_count=tea_bags(people=guests), treat_count=treats(people=guests))
+        )
+    )
 
 
 def tea_bags(people: int) -> int:
@@ -21,7 +26,7 @@ def tea_bags(people: int) -> int:
 
 def treats(people: int) -> int:
     """Determine the number of treats based on the number of guests"""
-    return int(1.5 * tea_bags(people))
+    return int(1.5 * tea_bags(people=people))
 
 
 def cost(tea_count: int, treat_count: int) -> float:
