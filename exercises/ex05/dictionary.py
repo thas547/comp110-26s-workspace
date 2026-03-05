@@ -23,15 +23,15 @@ def favorite_color(input: dict[str, str]) -> str:
         else:
             times[color] = 1
 
-        most = ""
-        high = 0
+    most = ""
+    high = 0
 
-        for color in times:
-            if times[color] > high:
-                high = times[color]
-                most = color
+    for color in times:
+        if times[color] > high:
+            high = times[color]
+            most = color
 
-        return most
+    return most
 
 
 def count(c: list[str]) -> dict[str, int]:
