@@ -81,3 +81,10 @@ def test_alphabetizer_2() -> None:
 def test_alphabetizer_edge() -> None:
     """testing the edge case of it"""
     assert alphabetizer([]) == {}
+
+
+def update_attendance_1() -> None:
+    """add person to already existing day"""
+    attendance = {"Thursday": ["Tommy", "Brooke"]}
+    update_attendance(attendance, "Thursday", "George")
+    assert attendance == {"Thursday": ["Tommy", "Brooke", "George"]}
