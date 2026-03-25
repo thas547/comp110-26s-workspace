@@ -18,7 +18,7 @@ def get_evens(numbers: str) -> str:
     index = 0
     evens = str()
     while index < len(numbers):
-        if int(numbers[index]) % 2 == 0:
+        if numbers[index] % 2 == 0:
             evens = evens + numbers[index]
             index += 1
         else:
