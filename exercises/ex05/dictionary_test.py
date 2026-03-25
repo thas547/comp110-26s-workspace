@@ -88,3 +88,17 @@ def update_attendance_1() -> None:
     attendance = {"Thursday": ["Tommy", "Brooke"]}
     update_attendance(attendance, "Thursday", "George")
     assert attendance == {"Thursday": ["Tommy", "Brooke", "George"]}
+
+
+def update_attendance_2() -> None:
+    """creating new day"""
+    attendance = {"Thursday": ["Tommy", "Brooke"]}
+    update_attendance(attendance, "Friday", "George")
+    assert attendance == {"Thursday": ["Tommy", "Brooke"], "Friday": ["George"]}
+
+
+def update_attendance_edge() -> None:
+    """repeating same person"""
+    attendance = {"Thursday": ["Tommy", "Brooke"]}
+    update_attendance(attendance, "Thursday", "Tommy")
+    assert attendance == {"Thursday": ["Tommy", "Brooke"]}
