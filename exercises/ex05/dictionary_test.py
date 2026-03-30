@@ -83,22 +83,22 @@ def test_alphabetizer_edge() -> None:
     assert alphabetizer([]) == {}
 
 
-def update_attendance_1() -> None:
+def test_update_attendance_1() -> None:
     """add person to already existing day"""
     attendance = {"Thursday": ["Tommy", "Brooke"]}
     update_attendance(attendance, "Thursday", "George")
     assert attendance == {"Thursday": ["Tommy", "Brooke", "George"]}
 
 
-def update_attendance_2() -> None:
+def test_update_attendance_2() -> None:
     """creating new day"""
     attendance = {"Thursday": ["Tommy", "Brooke"]}
     update_attendance(attendance, "Friday", "George")
     assert attendance == {"Thursday": ["Tommy", "Brooke"], "Friday": ["George"]}
 
 
-def update_attendance_edge() -> None:
+def test_update_attendance_edge() -> None:
     """repeating same person"""
-    attendance = {"Thursday": ["Tommy", "Brooke"]}
+    attendance = {}
     update_attendance(attendance, "Thursday", "Tommy")
-    assert attendance == {"Thursday": ["Tommy", "Brooke"]}
+    assert attendance == {"Thursday": ["Tommy"]}

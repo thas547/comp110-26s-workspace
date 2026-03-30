@@ -71,7 +71,7 @@ def update_attendance(
 ) -> None:
     """adding attendance for each day and person"""
     if day in attendance_log:
-        attendance_log[day].append(student)
+        if student not in attendance_log[day]:
+            attendance_log[day].append(student)
     else:
         attendance_log[day] = [student]
-    return

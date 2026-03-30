@@ -39,3 +39,17 @@ print(jacks_order.size)
 print(alyssas_order.price(1.0))
 pizza_list: list[pizza] = [alyssas_order, jacks_order, Pizza[False, "small", 0]]
 print(pizza_list)
+
+
+class Profile:
+
+    username: str
+    private: bool
+
+    def __init__(self, username_input: str) -> None:
+        self.username = username_input
+        self.private = True
+
+    def tweet(self, msg: str) -> None:
+        if self.private == False:
+            print(msg)
