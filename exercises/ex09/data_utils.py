@@ -1,6 +1,6 @@
 """Data related utility functions."""
 
-__author__ = ["", ""]
+__author__ = ["730733868", ""]
 
 from csv import DictReader
 
@@ -51,7 +51,10 @@ def convert_columns_to_int(
 
     return data_converted
 
+
 """These are the functions we wrote/will write in class!"""
+
+
 def read_csv_rows(filename: str) -> list[dict[str, str]]:
     """Read the rows of a CSV into a 'table'."""
     result: list[dict[str, str]] = []
@@ -91,4 +94,45 @@ def columnar(row_table: list[dict[str, str]]) -> dict[str, list[str]]:
     for column in first_row:
         result[column] = column_values(row_table, column)
 
+    return result
+
+
+def head(table: dict[str, list[str]], n: int) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+    for column in table:
+        new_list: list[str] = []
+        for i in range(n):
+            new_list.append(table[column][i])
+        result[column] = new_list
+    return result
+
+
+def select(table: dict[str, list[str]], columns: list[str]) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+    for column in columns:
+        result[column] = table[column]
+    return result
+
+
+def concat(
+    first: dict[str, list[str]], second: dict[str, list[str]]
+) -> dict[str, list[str]]:
+    result: dict[str, list[str]] = {}
+    for column in first:
+        result[column] = first[column]
+    for column in second:
+        if column in result:
+            result[column] += second[column]
+        else:
+            result[column] = second[column]
+    return result
+
+
+def count(values: list[str]) -> dict[str, int]:
+    result: dict[str, int] = {}
+    for item in values:
+        if item in result:
+            result[item] += 1
+        else:
+            result[item] = 1
     return result
